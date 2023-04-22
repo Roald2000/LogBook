@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family          : Poppins, Segoe UI Emoji, serif, sans-serif;
+    box-sizing           : border-box;
+    outline-offset       : 3px;
+    text-underline-offset: 3px;
+    transition           : .3s ease;
+}
