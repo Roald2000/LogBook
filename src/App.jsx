@@ -6,6 +6,7 @@ import http_request from './request_config';
 import AddPersonnel from './AddPersonnel';
 import TimeIn from './TimeIn';
 import TimeOut from './TimeOut';
+
 import swal from 'sweetalert';
 
 
@@ -63,6 +64,8 @@ const EditModal = (props) => {
         </form>
     </div>
 }
+
+
 
 
 
@@ -238,7 +241,7 @@ const App = () => {
                         <tr className='bg-orange-600 text-white'>
                             <th className='p-2 text-start text-sm'>Log No.</th>
                             <th className='p-2 text-start text-sm'>Personnel</th>
-                            <th className='p-2 text-start text-sm'>Department | Post. / Prof.</th>
+                            <th className='p-2 text-start text-sm'>Position | Department</th>
                             <th className='p-2 text-start text-sm'>Date Entry</th>
                             <th className='p-2 text-start text-sm'>Time In</th>
                             <th className='p-2 text-start text-sm'>Time Out</th>
@@ -250,13 +253,13 @@ const App = () => {
                             <tr key={item.log_id} className='odd:bg-orange-100 even:bg-orange-200'>
                                 <td className='px-2 py-3 text-start text-sm'>{item.log_id}</td>
                                 <td className='px-2 py-3 text-start text-sm'>{item.personnel_name}</td>
-                                <td className='px-2 py-3 text-start text-sm'>{item.post_prof}</td>
+                                <td className='px-2 py-3 text-start text-sm'>{item.position} | <span className='bg-slate-300 p-1 rounded'>{item.department}</span></td>
                                 <td className='px-2 py-3 text-start text-sm'>{item.date_entry}</td>
                                 <td className='px-2 py-3 text-start text-sm'>{item.time_in}</td>
                                 <td className='px-2 py-3 text-start text-sm'>{`${item.time_out !== '' ? item.time_out : 'N/A'}`}</td>
                                 <td className='px-2 py-3 text-start text-sm flex gap-2'>
                                     <button className='hover:underline underline-offset-4' type='button' onClick={() => {
-                                        toggleEditEntryModal(true); 
+                                        toggleEditEntryModal(true);
                                         setEditEntryValues({
                                             log_id: item.log_id,
                                             personnel_name: item.personnel_name,
