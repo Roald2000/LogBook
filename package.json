@@ -1,5 +1,6 @@
 {
-  "name": "react_tailwind",
+  "author": "roald",
+  "name": "react_tailwind",  
   "private": true,
   "version": "0.0.0",
   "type": "module",
